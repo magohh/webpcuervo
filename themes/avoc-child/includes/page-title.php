@@ -237,4 +237,4 @@ if (isset($pagesub) && $titleArrangement == 'main') { $titleWrite .= '<'.$subSiz
 
 			<?php } ?>
             
-            <?php if ($margin !== 'false') { ?><div class="spacer spacer-big spacer-hero"></div><?php } ?>
+            <?php if ($margin !== 'false') { ?><div class="spacer spacer-small spacer-hero"></div><?php } ?>

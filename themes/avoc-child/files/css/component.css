@@ -97,20 +97,25 @@
 	to { -webkit-transform: translateY(0); transform: translateY(0); }
 }
 
+
+label{
+    font-size: .5em!important;
+    font-weight: bold;
+}
 /* Input field */
 .questions input {
 	display: block;
 	margin: 0.3em 0 0 0;
-	padding: 0.5em 1em 0.5em 0.7em;
 	width: calc(100% - 2em);
 	border: none;
 	background: transparent;
 	color: rgba(0,0,0,0.8);
-	font-size: .6em;
+	font-size: .8em;
 	line-height: 1;
 	opacity: 0;
 	-webkit-transition: opacity 0.3s;
 	transition: opacity 0.3s;
+	font-weight: normal!important;
 }
 
 .questions .current input,
@@ -203,6 +208,7 @@
 	width: 3em;
 	font-weight: 700;
 	font-size: 0.4em;
+	color:#e74c3c;
 }
 
 .simform .number:after {
@@ -249,6 +255,7 @@
 	opacity: 0;
 	-webkit-transition: opacity 0.4s;
 	transition: opacity 0.4s;
+	color:black;
 }
 
 .simform .error-message {
@@ -287,6 +294,8 @@
 	-webkit-transition: opacity 0.3s, visibility 0s 0.3s;
 	transition: opacity 0.3s, visibility 0s 0.3s;
 }
+
+
 
 /* No JS Fallback */
 .no-js .simform {
