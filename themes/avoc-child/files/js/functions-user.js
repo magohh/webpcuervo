@@ -5,6 +5,7 @@ var $=jQuery.noConflict();
    $(function(){
 
     $(window).ready(function(){
+      $('form').parsley();
       minimalForms();
     });
 
@@ -30,6 +31,10 @@ function minimalForms(){
       var messageEl = theForm.querySelector( '.final-message' );
       messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
       classie.addClass( messageEl, 'show' );
+
+      /*var messageEl2 = theForm.querySelector( '.final-message-2' );
+      messageEl2.innerHTML = 'Gracias\'ll be in touch.';
+      classie.addClass( messageEl2, 'show' );*/
     }
   } );
 

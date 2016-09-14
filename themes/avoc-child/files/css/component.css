@@ -98,17 +98,23 @@
 }
 
 
-label{
-    font-size: .5em!important;
+ol.questions label{
+    font-size: .6em!important;
     font-weight: bold;
     position: absolute;
-    top:-5em;
+    top:-4em;
+    margin-left: .3em;
+    text-transform:none; 
+
 }
+
+
 /* Input field */
 .questions input {
 	display: block;
-	margin: 0.3em 0 0 0;
-	width: calc(100% - 2em);
+	margin: 0;
+	padding-left:.3em;
+	/*width: calc(100% - 2em);*/
 	border: none;
 	background: transparent;
 	color: rgba(0,0,0,0.8);
@@ -152,6 +158,7 @@ label{
 	transform: translateX(-20%);
 	pointer-events: none;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
 }
 
 .next:hover {
@@ -160,7 +167,7 @@ label{
 
 .next::after {
 	position: absolute;
-	top: 0;
+	top: 29px;
 	left: 0;
 	width: 100%;
 	height: 100%;
@@ -181,6 +188,7 @@ label{
 	-webkit-transform: translateX(0);
 	transform: translateX(0);
 	pointer-events: auto;
+
 }
 
 /* Progress bar */
@@ -209,7 +217,7 @@ label{
 	margin: 0.4em 0;
 	width: 3em;
 	font-weight: 700;
-	font-size: 0.4em;
+	font-size: 0.5em;
 	color:#e74c3c;
 }
 
@@ -337,4 +345,26 @@ input[type=text]::-ms-clear {
 	.simform {
 		font-size: 1.2em;
 	}
+}
+
+/*messages*/
+
+.show-message{
+	opacity: 1;
+}
+.hide-message{
+	opacity: 0!important;
+}
+/*simform movil*/
+@media(max-width: 600px){
+	.simform{
+		padding: 5em 0 3em!important;
+	}
+	ol.questions label{
+		font-size:1em!important; 
+	}
+	.close{
+		right:3px;
+		top:1px;
+	}		
 }

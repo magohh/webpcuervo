@@ -50,8 +50,6 @@ function update_icl_strings_charset_and_collations() {
 			}
 		}
 	}
-
-	recreate_st_db_cache_tables( $language_data );
 }
 
 function upgrade_3_5_1_get_language_charset_and_collation() {
@@ -69,43 +67,6 @@ function upgrade_3_5_1_get_language_charset_and_collation() {
 	}
 
 	return $data;
-}
-
-function recreate_st_db_cache_tables( $language_data ) {
-	global $wpdb;
-
-	$wpdb->query( "DROP TABLE IF EXISTS `{$wpdb->prefix}icl_string_pages`" );
-	$wpdb->query( "DROP TABLE IF EXISTS `{$wpdb->prefix}icl_string_urls`" );
-
-	$sql = '
-	CREATE TABLE IF NOT EXISTS `%sicl_string_urls` (
-	  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-	  `language` varchar(5) %s DEFAULT NULL,
-	  `url` varchar(255) DEFAULT NULL,
-	  PRIMARY KEY (`id`),
-	  UNIQUE KEY `string_string_lang_url` (`language`,`url`(191))
-	)';
-
-	$charset_collation = $wpdb->get_charset_collate();
-	$field_charset_collation   = 'CHARACTER SET ' . $language_data['charset'] . ' COLLATE ' . $language_data['collation'];
-	$sql = sprintf( $sql, $wpdb->prefix, $field_charset_collation );
-	$sql .= $charset_collation;
-
-	$result = $wpdb->query( $sql );
-
-	if ( $result ) {
-		$sql = "	
-		CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}icl_string_pages` (
-		  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-		  `string_id` bigint(20) NOT NULL,
-		  `url_id` bigint(20) NOT NULL,
-		  PRIMARY KEY (`id`),
-		  UNIQUE KEY `string_string_id_to_url_id` (`string_id`,`url_id`)
-		)";
-		$sql .= $charset_collation;
-
-		$wpdb->query( $sql );
-	}
 }
 
 update_icl_strings_charset_and_collations();

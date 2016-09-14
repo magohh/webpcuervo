@@ -76,6 +76,14 @@ header:before{background-color: #00aabb;}
 		padding-right: 8px!important;
 	}
 }
+.menu-light nav#main-nav > ul > li > a{
+    color:#ffffff!important;
+}
+@media only screen and (max-width: 1024px){
+    .menu-light nav#main-nav > ul > li > a{
+        color: black!important;
+    }
+}
 
 nav#main-nav ul li > a{line-height: 0px!important;}
 
@@ -85,9 +93,6 @@ nav#main-nav > ul > li:hover > a, nav#main-nav > ul > li.current-menu-item > a{
 }
 ul#primary:active{color:#e74c3c;}
 
-.menu-light nav#main-nav > ul > li > a{
-    color:#ffffff!important;
-}
 
 ul#primary li.current-menu-item{background-color: #e74c3c;}
 /*--Button language--*/
@@ -200,7 +205,6 @@ div.hover-caption h5{
 /*Modal*/
 .modalDialog {
     position: fixed;
-    font-family: Arial, Helvetica, sans-serif;
     top: 0;
     right: 0;
     bottom: 0;
@@ -241,7 +245,7 @@ div.hover-caption h5{
 }
 
 @media(min-width: 1200px){
-	.modalDialog > div { width:600px;}
+	.modalDialog > div { width:800px;}
 }
 
 .close {
@@ -266,5 +270,7 @@ div.hover-caption h5{
 
 ul li, ol li{margin-top: 0px;}
 
-/*Minimal form*/
-
+/*spacer- projects page*/
+#section-services{
+    margin-top: 120px;
+}

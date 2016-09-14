@@ -372,6 +372,7 @@ function icl_sitepress_activate() {
 
 	//Set new caps for all administrator role
 	icl_enable_capabilities();
+	repair_el_type_collate();
 
 	do_action('wpml_activated');
 }

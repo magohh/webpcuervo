@@ -64,29 +64,53 @@ $theId = sr_getId();
                     <a id="backtotop" href="#"><?php _e( 'Back To Top', 'sr_avoc_theme' ) ?></a>
                 <?php endif; ?>  
 
-                <?php } ?>
+            <?php } ?>
+
+            <!--<form><input type="email" required data-parsley-type-message="La dirección de correo es inválida." data-parsley-required-message="El correo es obligatorio."/>
+            	<input type="submit" value="Submit">
+            </form>-->
 
             <div id="openModal" class="modalDialog">
                 <div>   <a href="#close" title="Close" class="close">X</a>
 					<section>
-						<form id="theForm" class="simform" autocomplete="off">
+						<form id="theForm" class="simform" autocomplete="off" data-parsley-validate>
 							<div class="simform-inner">
 								<ol class="questions">
 									<li>
-										<span><label for="q1">Queremos conocerte mejor, ¿cómo te llamas?</label></span>
-										<input id="q1" name="q1" placeholder="Anda, dinos tu nombre sin pena :)" type="text"/>
+                                        <?php if( 'es' == $lang ) : ?>
+    										<span><label for="q1">Queremos conocerte mejor, ¿cómo te llamas?</label></span>
+    										<input id="q1" name="q1" placeholder="Anda, dinos tu nombre sin pena :)" type="text"/>
+                                        <?php else : ?>
+                                            <span><label for="q1">We want to meet you better, what's your name ?</label></span>
+                                            <input id="q1" name="q1" placeholder="Go on, tell us your name without shame :)" type="text"/>
+                                        <?php endif; ?>  
 									</li>
 									<li>
-										<span><label for="q2">Necesitamos tu email para estar en contacto</label></span>
-										<input id="q2" name="q2" placeholder="Te juro que no mandaremos spam, es solo para contactarte." type="text"/>
+                                        <?php if( 'es' == $lang ) : ?>
+    										<span><label for="q2">Necesitamos tu email para estar en contacto</label></span>
+    										<input  type="email" id="q2" name="q2" placeholder="Te juro que no mandaremos spam, es solo para contactarte" required data-parsley-type-message="La dirección de correo es inválida." data-parsley-required-message="El correo es obligatorio./>
+                                        <?php else : ?>
+                                            <span><label for="q2">We need your email to stay in touch</label></span>
+                                           <input type="email" id="q2" name="q2" placeholder="I swear we'll not send spam , it is only to contact you" required data-parsley-type-message="La dirección de correo es inválida." data-parsley-required-message="El correo es obligatorio."/>
+                                        <?php endif; ?> 
 									</li>
 									<li>
-										<span><label for="q3">Cuéntanos un poco sobre tu proyecto</label></span>
-										<input id="q3" name="q3" placeholder="Necesitamos un poquito mas de información :P" type="text"/>
+                                        <?php if( 'es' == $lang ) : ?>
+    										<span><label for="q3">Cuéntanos un poco sobre tu proyecto</label></span>
+    										<input id="q3" name="q3" placeholder="Necesitamos un poquito mas de información :P" type="text"/>
+                                        <?php else : ?>
+                                            <span><label for="q3">Tell us about your project</label></span>
+                                            <input id="q3" name="q3" placeholder="We need a little more information :P" type="text"/>
+                                        <?php endif; ?> 
 									</li>
 									<li>
-										<span><label for="q4">¿Cuál es tu presupuesto?</label></span>
-										<input id="q4" name="q4" placeholder="Puede ser un estimado. ¡Tratamos a todos nuestros clientes igual, no importa el presupuesto!" type="text"/>
+                                        <?php if( 'es' == $lang ) : ?>
+    										<span><label for="q4">¿Cuál es tu presupuesto?</label></span>
+    										<input id="q4" name="q4" placeholder="Puede ser un estimado. ¡Tratamos a todos nuestros clientes igual, no importa el presupuesto!" type="text"/>
+                                        <?php else : ?>
+                                            <span><label for="q4">What is your budget?</label></span>
+                                            <input id="q4" name="q4" placeholder="It may be an estimate. We treat all our customers equally, no matter the budget!" type="text"/>
+                                        <?php endif; ?> 
 									</li>
 								</ol><!-- /questions -->
 								<button class="submit" type="submit">Send answers</button>
@@ -100,7 +124,9 @@ $theId = sr_getId();
 									<span class="error-message"></span>
 								</div><!-- / controls -->
 							</div><!-- /simform-inner -->
+
 							<span class="final-message"></span>
+
 						</form><!-- /simform -->
 					</section>
                 </div>
@@ -113,7 +139,6 @@ $theId = sr_getId();
     
 </div> <!-- END #page-content -->
 <!-- PAGE CONTENT -->
-
 <?php wp_footer(); ?>
 
 </body>

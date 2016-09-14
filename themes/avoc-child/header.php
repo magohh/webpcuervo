@@ -86,6 +86,8 @@ $lang = isset( $_GET['lang'] ) ? $_GET['lang'] : 'es';
                 ?>
                 
                 <?php if (!get_option($sr_prefix.'_disableheadersearch')) { ?>
+
+                    
                 <a href="#" class="open-search"></a>
                 <?php } ?>
                 
@@ -102,13 +104,15 @@ $lang = isset( $_GET['lang'] ) ? $_GET['lang'] : 'es';
                     <a href="#" class="open-filter <?php echo esc_attr($displayClass); ?>" data-related-grid="<?php echo esc_attr($related); ?>"><?php _e("Filter","sr_avoc_theme"); ?></a> 
                 <?php endif; ?>  
                    
-                    <?php } ?>
+                <?php } ?>
                 
                 
                 <?php if ((get_post_type() == 'portfolio' && !get_option($sr_prefix.'_portfolioshare')) ||
 						  (is_single() && get_post_type() == 'post' && !get_option($sr_prefix.'_blogpostshare')) ) { ?>
                 <a href="#" class="open-share"><?php _e("Share","sr_avoc_theme"); ?></a>
                 <?php } ?>
+
+                
                                 
             </div>
             <?php } // END if has_nav_menu ?>

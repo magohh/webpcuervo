@@ -1002,7 +1002,7 @@ class WCML_Terms{
                         INNER JOIN {$this->wpdb->term_taxonomy} AS tt
                         ON t.term_id = tt.term_id
                         WHERE tt.taxonomy = %s AND t.slug = %s LIMIT 1",
-                $taxonomy, $slug )
+                $taxonomy, sanitize_title( $slug ) )
         );
     }
 
@@ -1016,6 +1016,17 @@ class WCML_Terms{
                         WHERE t.term_id = %d AND x.taxonomy = %s",
                 $term_id, $taxonomy )
         );
+    }
+
+    public function wcml_get_translated_term( $term_id, $taxonomy, $language ){
+
+        $tr_id = apply_filters( 'translate_object_id', $term_id, $taxonomy, false, $language );
+
+        if( !is_null( $tr_id ) ) {
+            $term_id = $tr_id;
+        }
+
+        return $this->wcml_get_term_by_id( $term_id, $taxonomy );
     }
 
 }
