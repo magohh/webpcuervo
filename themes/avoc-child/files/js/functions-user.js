@@ -5,8 +5,9 @@ var $=jQuery.noConflict();
    $(function(){
 
     $(window).ready(function(){
- 
+
       minimalForms();
+      fontColor();
       //$('form').parsley();
     });
 
@@ -40,30 +41,27 @@ function minimalForms(){
   } );
 
 }
+function fontColor(){
+  if( $('li').hasClass('menu-item') ){
+    $("li.menu-item a").addClass('font-color');
+  }
+  
+}
+    
 $(document).ready(function(){       
    var scroll_start = 0;
    var startchange = $('.nav');
    var offset = startchange.offset();
+ 
    $(document).scroll(function() { 
       scroll_start = $(this).scrollTop();
       if(scroll_start > offset.top) {
           $('.nav').css('background-color', 'rgb(255,255,255)');
-       } else {
-          $('.nav').css('background-color', '#00aabb');
-       }
-   });
-});
-
-$(document).ready(function(){       
-   var scroll_start = 0;
-   var startchange = $('.nav');
-   var offset = startchange.offset();
-   $(document).scroll(function() { 
-      scroll_start = $(this).scrollTop();
-      if(scroll_start > offset.top) {
           $('a.font-color').css('color', 'black');
        } else {
+          $('.nav').css('background-color', '#00aabb');
           $('a.font-color').css('color', 'white');
        }
    });
 });
+
