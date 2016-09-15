@@ -19,7 +19,6 @@ $theId = sr_getId();
         </div>
         
        <div class="footer-inner <?php if(get_option($sr_prefix.'_footerlayout') !== 'column') { ?>align-center<?php } ?> wrapper">
-       <div>
             
             <div class="column-section clearfix">
                 <div class="column-one">
@@ -73,7 +72,7 @@ $theId = sr_getId();
             <div id="openModal" class="modalDialog">
                 <div>   <a href="#close" title="Close" class="close">X</a>
 					<section>
-						<form id="theForm" class="simform" autocomplete="off" data-parsley-validate>
+						<form id="theForm" class="simform" autocomplete="off">
 							<div class="simform-inner">
 								<ol class="questions">
 									<li>
@@ -88,10 +87,10 @@ $theId = sr_getId();
 									<li>
                                         <?php if( 'es' == $lang ) : ?>
     										<span><label for="q2">Necesitamos tu email para estar en contacto</label></span>
-    										<input  type="email" id="q2" name="q2" placeholder="Te juro que no mandaremos spam, es solo para contactarte" required data-parsley-type-message="La dirección de correo es inválida." data-parsley-required-message="El correo es obligatorio./>
+    										<input  type="email" id="q2" class=".q2" name="q2" placeholder="Te juro que no mandaremos spam, es solo para contactarte"/>
                                         <?php else : ?>
                                             <span><label for="q2">We need your email to stay in touch</label></span>
-                                           <input type="email" id="q2" name="q2" placeholder="I swear we'll not send spam , it is only to contact you" required data-parsley-type-message="La dirección de correo es inválida." data-parsley-required-message="El correo es obligatorio."/>
+                                           <input type="email" id="q2" class=".q2" name="q2" placeholder="I swear we'll not send spam , it is only to contact you" />
                                         <?php endif; ?> 
 									</li>
 									<li>
@@ -115,7 +114,7 @@ $theId = sr_getId();
 								</ol><!-- /questions -->
 								<button class="submit" type="submit">Send answers</button>
 								<div class="controls">
-									<button class="next"></button>
+									<button class="next-button"></button>
 									<div class="progress"></div>
 									<span class="number">
 										<span class="number-current"></span>

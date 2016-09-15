@@ -17,46 +17,52 @@ if ($showPagetitle == "default" || $showPagetitle == "false") { $pTop = "notoppa
 
 ?>
 
-		<!-- SECTION PORTFOLIO -->
-		<section id="portfolio-single" class="<?php echo esc_attr($pTop); ?>">
-			<div class="section-inner">				
-           	
+        <!-- SECTION PORTFOLIO -->
+        <section id="portfolio-single" class="<?php echo esc_attr($pTop); ?>">
+            <div class="section-inner">             
+            
             <?php if (post_password_required()) { ?>
-            	<div class="wrapper-small align-center">
-				<?php the_content(); ?>
+                <div class="wrapper-small align-center">
+                <?php the_content(); ?>
                 </div>
                 <?php if (get_option($sr_prefix.'_portfoliopagination')) { ?><div class="spacer spacer-big"></div><?php } ?>
             <?php } else { ?>
-            	
-				<?php if  (get_the_content() != '') { ?>
+                
+                <?php if  (get_the_content() != '') { ?>
                     <?php the_content(); ?>
                 <?php } ?>
                 
             <?php } // END if password ?>
                 
-			<?php 
-            if (!get_option($sr_prefix.'_portfoliopagination')) {
+            <?php 
+          if (!get_option($sr_prefix.'_portfoliopagination')) {
                 $back = false;
-                if (get_option($sr_prefix.'_portfoliobacklink') == 'true') { $back = __( 'Back to Works', 'sr_avoc_theme' );  }
-				if( 'es' == $lang ) :{
-	                echo '<div class="wrapper">';
-	                sr_singlepagination('portfolio','portfoliosingle-pagination','single-pagination ',__( 'Proyecto previo', 'sr_avoc_theme' ),__( 'Siguiente proyecto', 'sr_avoc_theme' ),$back);  
-	                echo '</div>';
-	            }else :{
-		            echo '<div class="wrapper">';
-	                sr_singlepagination('portfolio','portfoliosingle-pagination','single-pagination ',__( 'Previous Project', 'sr_avoc_theme' ),__( 'Next Project', 'sr_avoc_theme' ),$back);  
-	                echo '</div>';
-					}endif;
+                if( 'es' == $lang ) :{
+                    if (get_option($sr_prefix.'_portfoliobacklink') == 'true') { $back = __( 'Regresa a portafolio', 'sr_avoc_theme' );  }
+                    }else :{
+                    if (get_option($sr_prefix.'_portfoliobacklink') == 'true') { $back = __( 'Back to Works', 'sr_avoc_theme' );  }
+                    }endif;
+                    
+                if( 'es' == $lang ) :{
+                    echo '<div class="wrapper">';
+                    sr_singlepagination('portfolio','portfoliosingle-pagination','single-pagination ',__( 'Proyecto previo', 'sr_avoc_theme' ),__( 'Siguiente proyecto', 'sr_avoc_theme' ),$back);  
+                    echo '</div>';
+                }else :{
+                    echo '<div class="wrapper">';
+                    sr_singlepagination('portfolio','portfoliosingle-pagination','single-pagination ',__( 'Previous Project', 'sr_avoc_theme' ),__( 'Next Project', 'sr_avoc_theme' ),$back);  
+                    echo '</div>';
+                    }endif;
             }
+
             wp_link_pages();
             ?>
 
             <?php if (!get_option($sr_prefix.'_portfoliocomments') && comments_open() && !post_password_required() ) { comments_template( '', true ); } ?>
             
-			</div>
-		</section>
-		<!-- SECTION PORTFOLIO -->
-		
+            </div>
+        </section>
+        <!-- SECTION PORTFOLIO -->
+        
 <?php endwhile; ?>
 <?php endif; ?>
 

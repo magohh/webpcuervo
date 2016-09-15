@@ -67,7 +67,7 @@ $lang = isset( $_GET['lang'] ) ? $_GET['lang'] : 'es';
 				<?php if (get_option($sr_prefix.'_logolight')) { ?><a id="light-logo" class="logotype" href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url(get_option($sr_prefix.'_logolight')); ?>" alt="Logo"></a><?php } ?>
             </div>
                            
-				
+	
 			<?php if(has_nav_menu('primary-menu')) {  ?>
             <div id="menu" class="<?php if (get_option($sr_prefix.'_headerlogomenu') == 'opposite') { ?>left-float<?php } else { ?>right-float<?php } ?> clearfix menu-<?php echo esc_attr($logoMenuAppearance); ?>">
                 <a href="#" class="open-nav"><span class="hamburger"></span><span class="text"><?php _e("Menu","sr_avoc_theme"); ?></span></a>
@@ -111,10 +111,9 @@ $lang = isset( $_GET['lang'] ) ? $_GET['lang'] : 'es';
 						  (is_single() && get_post_type() == 'post' && !get_option($sr_prefix.'_blogpostshare')) ) { ?>
                 <a href="#" class="open-share"><?php _e("Share","sr_avoc_theme"); ?></a>
                 <?php } ?>
-
-                
                                 
             </div>
+
             <?php } // END if has_nav_menu ?>
             
             <?php if (get_post_meta($theId, $sr_prefix.'_portfoliofilter', true) == 'true' && is_page_template( 'template-portfolio.php' )) { ?>
@@ -137,7 +136,7 @@ $lang = isset( $_GET['lang'] ) ? $_GET['lang'] : 'es';
                 </div>
             </div>
             <?php } ?>
-            
+            <div class="nav"></div>
             <?php if (!get_option($sr_prefix.'_disableheadersearch')) { ?>
             <div id="header-search">
             	<div class="search-inner align-center">
@@ -149,9 +148,11 @@ $lang = isset( $_GET['lang'] ) ? $_GET['lang'] : 'es';
                 	<h6 class="title-search alttitle"><?php _e("... and press enter to start","sr_avoc_theme"); ?></h6>
                 </div>
             </div>
+
             <?php } ?>
                     
-		</div> <!-- END .header-inner -->
+		</div> 
+        <!-- END .header-inner -->
 	</header> <!-- END header -->
 	<!-- HEADER -->
     <?php } ?>

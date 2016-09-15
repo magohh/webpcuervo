@@ -108,7 +108,16 @@ ol.questions label{
 
 }
 
-
+ol.questions label.placeholder{
+	opacity: .3;
+	padding-left:.3em;
+	font-size:.8em!important;
+	font-weight: normal!important;
+	top:0;
+}
+ol.questions label.placeholder:checked{
+	opacity: 0;
+}
 /* Input field */
 .questions input {
 	display: block;
@@ -137,7 +146,7 @@ ol.questions label{
 }
 
 /* Next question button */
-.next {
+.next-button{
 	position: absolute;
 	right: 0;
 	bottom: 2.15em; /* padding-bottom of form plus progress bar height */
@@ -161,11 +170,11 @@ ol.questions label{
 
 }
 
-.next:hover {
+.next-button:hover {
 	color: rgba(0,0,0,0.5);
 }
 
-.next::after {
+.next-button::after {
 	position: absolute;
 	top: 29px;
 	left: 0;
@@ -183,7 +192,7 @@ ol.questions label{
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.next.show {
+.next-button.show {
 	opacity: 1;
 	-webkit-transform: translateX(0);
 	transform: translateX(0);
@@ -284,6 +293,7 @@ ol.questions label{
 	text-align: center;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
+	font-family: Montserrat;
 }
 
 .error-message.show,

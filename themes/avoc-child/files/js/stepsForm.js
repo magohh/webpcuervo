@@ -54,7 +54,7 @@
 		classie.addClass( this.questions[0], 'current' );
 		
 		// next question control
-		this.ctrlNext = this.el.querySelector( 'button.next' );
+		this.ctrlNext = this.el.querySelector( 'button.next-button' );
 
 		// progress bar
 		this.progress = this.el.querySelector( 'div.progress' );
@@ -208,6 +208,7 @@
 
 		return true;
 	}
+
 
 	// TODO (next version..)
 	stepsForm.prototype._showError = function( err ) {
