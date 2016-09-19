@@ -236,10 +236,19 @@ a.open-filter{
 }
 a.open-filter{top:45px!important;}
 
+@media (max-width: 1024px){
+	a.open-filter{top:10px!important;}
+}
+
 a.open-share{display:none;}
 
 p{margin:0px 0px 40px;}
 
+@media only screen and (max-width: 1024px){
+	nav#main-nav{
+		top:90px!important;
+	}
+}
 /*--Alignment*/
 .margin-top{margin-top: 40px;}
 
