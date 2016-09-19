@@ -105,7 +105,7 @@ footer .footer-inner { padding: 100px 0; }
 
 
 /* Menu */
-header:after { position: fixed; top: 0px !important; left: auto; right: -300px; width: 300px; height: 100% !important; transition: right 0.4s ease; background: #00aabb !important; display: block !important; }
+header:after { position: fixed; top: 0px !important; left: auto; right: -300px; width: 300px; height: 100% !important; transition: right 0.4s ease; background: #ffffff !important; display: block !important; }
 header.opposite:after { left: -300px; right: auto; transition: left 0.4s ease; }
 header.nav-is-open:after { right: 0; }
 header.opposite.nav-is-open:after { left: 0; right: auto; }
