@@ -58,9 +58,14 @@ $(document).ready(function(){
       if(scroll_start > offset.top) {
           $('.nav').css('background-color', 'rgb(255,255,255)');
           $('a.font-color').css('color', 'black');
+          $('#light-logo').addClass('opacity--1');
+          $('#dark-logo').addClass('opacity--0');
+
        } else {
           $('.nav').css('background-color', '#00aabb');
           $('a.font-color').css('color', 'white');
+          $('#light-logo').removeClass('opacity--1');
+          $('#dark-logo').removeClass('opacity--0');
        }
    });
 });
