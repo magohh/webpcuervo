@@ -9,6 +9,7 @@ var $=jQuery.noConflict();
       minimalForms();
       fontColor();
       initMap();
+      
       //$('form').parsley();
     });
 
@@ -32,10 +33,14 @@ function minimalForms(){
 
       // let's just simulate something...
       var messageEl = theForm.querySelector( '.final-message' );
-      if( 'es' == $lang ) {
-      messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
-      } else { 
-      messageEl.innerHTML = 'Gracias! We\'ll be in touch.';}
+      var URLopenModal = window.location.href.substr(-18);
+      console.log(URLopenModal)
+      if ( URLopenModal == '?lang=en#openModal'){
+        messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
+      } else {
+        messageEl.innerHTML = 'Gracias!, Nos pondremos en contacto';
+      }
+      
       classie.addClass( messageEl, 'show' );
 
       /*var messageEl2 = theForm.querySelector( '.final-message-2' );
@@ -43,6 +48,11 @@ function minimalForms(){
       classie.addClass( messageEl2, 'show' );*/
     }
   } );
+
+
+
+
+
 
 }
 function fontColor(){
@@ -57,6 +67,9 @@ $(document).ready(function(){
    var scroll_start = 0;
    var startchange = $('.nav');
    var offset = startchange.offset();
+
+
+
  
    $(document).scroll(function() { 
       scroll_start = $(this).scrollTop();

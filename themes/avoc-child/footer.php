@@ -87,10 +87,10 @@ $theId = sr_getId();
 									<li>
                                         <?php if( 'es' == $lang ) : ?>
     										<span><label for="q2">Necesitamos tu email para estar en contacto</label></span>
-    										<input  type="email" id="q2" class=".q2" name="q2" placeholder="Te juro que no mandaremos spam, es solo para contactarte"/>
+    										<input  type="email" id="q2" class="q2" name="q2" placeholder="Te juro que no mandaremos spam, es solo para contactarte"/>
                                         <?php else : ?>
                                             <span><label for="q2">We need your email to stay in touch</label></span>
-                                           <input type="email" id="q2" class=".q2" name="q2" placeholder="I swear we'll not send spam , it is only to contact you" />
+                                           <input type="email" id="q2" class="q2" data-validate="email" name="q2" placeholder="I swear we'll not send spam , it is only to contact you" />
                                         <?php endif; ?> 
 									</li>
 									<li>
@@ -101,7 +101,7 @@ $theId = sr_getId();
                                             <span><label for="q3">Tell us about your project</label></span>
                                             <input id="q3" name="q3" placeholder="We need a little more information :P" type="text"/>
                                         <?php endif; ?> 
-									</li>
+								</li>
 									<li>
                                         <?php if( 'es' == $lang ) : ?>
     										<span><label for="q4">¿Cuál es tu presupuesto?</label></span>

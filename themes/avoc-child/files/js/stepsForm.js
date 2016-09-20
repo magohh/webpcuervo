@@ -72,6 +72,7 @@
 		this.error = this.el.querySelector( 'span.error-message' );
 		
 		// init events
+
 		this._initEvents();
 	};
 
@@ -198,27 +199,50 @@
 
 	// TODO (next version..)
 	// the validation function
-	stepsForm.prototype._validade = function() {
-		// current question´s input
-		var input = this.questions[ this.current ].querySelector( 'input' ).value;
-		if( input === '' ) {
-			this._showError( 'EMPTYSTR' );
-			return false;
-		}
 
+	stepsForm.prototype._validade = function() {
+	// current question´s input
+	var input = this.questions[ this.current ].querySelector( 'input' ).value;
+
+	//if( input === '' ) {
+	//	this._showError( 'EMPTYSTR' );
+	//	return false;
+	//} else if ( ( 'input.q2' ) != '@' ){
+	//	this._showError( 'INVALIDEMAIL' );
+	//	return false;
+	//}
+	//return true;
+	if( input === '' ) {
+		this._showError( 'EMPTYSTR' );
+		return false;
+		} 
+	if( ( 'input.q2' ) != '@' ) {
+		this._showError( 'INVALIDEMAIL' );
+		return false;
+		} 
 		return true;
-	}
+}
 
 
 	// TODO (next version..)
 	stepsForm.prototype._showError = function( err ) {
 		var message = '';
+		var URLopenModal = window.location.href.substr(-18);
+		console.log(URLopenModal)
 		switch( err ) {
-			case 'EMPTYSTR' : 
+			case 'EMPTYSTR' :
+			if ( URLopenModal == '?lang=en#openModal') {
 				message = 'Please fill the field before continuing';
+			} else {
+				message = 'Por favor completa el campo para continuar';
+			}
 				break;
-			case 'INVALIDEMAIL' : 
+			case 'INVALIDEMAIL' :
+			if ( URLopenModal == '?lang=en#openModal') { 
 				message = 'Please fill a valid email address';
+			} else {
+				message = 'Por favor ingresa una dirección válida';
+			}
 				break;
 			// ...
 		};

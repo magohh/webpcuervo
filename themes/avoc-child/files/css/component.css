@@ -192,6 +192,12 @@ ol.questions label.placeholder:checked{
 	-moz-osx-font-smoothing: grayscale;
 }
 
+@media(max-width: 600px){
+	.next-button::after {
+	position: absolute;
+	top: -1em;}
+}
+
 .next-button.show {
 	opacity: 1;
 	-webkit-transform: translateX(0);
@@ -227,7 +233,7 @@ ol.questions label.placeholder:checked{
 	width: 3em;
 	font-weight: 700;
 	font-size: 0.5em;
-	color:#e74c3c;
+	color:#ffffff;
 }
 
 .simform .number:after {
@@ -274,7 +280,7 @@ ol.questions label.placeholder:checked{
 	opacity: 0;
 	-webkit-transition: opacity 0.4s;
 	transition: opacity 0.4s;
-	color:black;
+	color:#ffffff;
 }
 
 .simform .error-message {
