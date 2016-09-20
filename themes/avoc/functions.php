@@ -184,7 +184,7 @@ if( !function_exists( 'sr_enqueue_scripts' ) ) {
 		wp_enqueue_script( 'htheme-modernizr-custom', get_stylesheet_directory_uri().'/files/js/modernizr.custom.js', array( 'jquery' ) );	
 		wp_enqueue_script( 'htheme-stepsForm', get_stylesheet_directory_uri().'/files/js/stepsForm.js', array( 'jquery' ) );
 
-	
+		wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC2lRtHTpUdAllMJMnEpCkBBGkuJpYROrQ&signed_in=true&callback=initMap', array( 'jquery' ) );
 
 		// include mqueries if true
 		if (!get_option($sr_prefix.'_responsive')) { 

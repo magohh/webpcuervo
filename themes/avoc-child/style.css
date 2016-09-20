@@ -369,23 +369,15 @@ footer #backtotop:hover{color:#e74c3c!important;}
 
 ul li, ol li{margin-top: 0px;}
 
-/* Form Contact */
-
-/* Number indicator */
-.simform .number {
-    color:#fff !important;
-}
-
-/*final message */
-.simform .final-message {
-    color:#fff !important;
-}
-
 /*spacer- projects page*/
 #section-services{
     margin-top: 120px;
 }
 
+#map{
+	height:300px;
+	width: 100%;
+}
 
 
 

@@ -15,7 +15,7 @@ $theId = sr_getId();
 
         <div class="map-wrap iframe-cont">
             <div class="overlay" onClick="style.pointerEvents='none'"></div><!-- wrap map iframe to turn off mouse scroll and turn it back on on click -->
-            <iframe class="map" width="100%" height="170" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d22890686.75573349!2d-96.21416883667936!3d35.34040077695424!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x17490f0c276aca1b!2sPeque%C3%B1o+Cuervo!5e0!3m2!1sen!2smx!4v1473776082170" style="border:0" allowfullscreen></iframe>
+           <div id="map"></div>
         </div>
         
        <div class="footer-inner <?php if(get_option($sr_prefix.'_footerlayout') !== 'column') { ?>align-center<?php } ?> wrapper">
