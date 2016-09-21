@@ -75,12 +75,14 @@ $(document).ready(function(){
       scroll_start = $(this).scrollTop();
       if(scroll_start > offset.top) {
           $('.nav').css('background-color', 'rgb(255,255,255)');
+          $('.nav').css('height', '99px');
           $('a.font-color').css('color', 'black');
           $('#light-logo').addClass('opacity--1');
           $('#dark-logo').addClass('opacity--0');
 
        } else {
           $('.nav').css('background-color', '#00aabb');
+          $('.nav').css('height', '120px');
           $('a.font-color').css('color', 'white');
           $('#light-logo').removeClass('opacity--1');
           $('#dark-logo').removeClass('opacity--0');
@@ -108,8 +110,7 @@ var image = {
     size: new google.maps.Size(100, 100),
     // The origin for this image is (0, 0).
     origin: new google.maps.Point(0, 0),
-    // The anchor for this image is the base of the flagpole at (0, 32).
-    anchor: new google.maps.Point(0, 0)
+    anchor: new google.maps.Point(32, 32)
   };
     var marker, i;
 

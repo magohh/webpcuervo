@@ -200,31 +200,41 @@
 	// TODO (next version..)
 	// the validation function
 
-	stepsForm.prototype._validade = function() {
-	// current question´s input
-	var input = this.questions[ this.current ].querySelector( 'input' ).value;
 
-	//if( input === '' ) {
-	//	this._showError( 'EMPTYSTR' );
-	//	return false;
-	//} else if ( ( 'input.q2' ) != '@' ){
-	//	this._showError( 'INVALIDEMAIL' );
-	//	return false;
-	//}
-	//return true;
-	if( input === '' ) {
-		this._showError( 'EMPTYSTR' );
-		return false;
-		} 
-	if( ( 'input.q2' ) != '@' ) {
-		this._showError( 'INVALIDEMAIL' );
-		return false;
-		} 
-		return true;
-}
+// TODO (next version..)
+// the validation function
+stepsForm.prototype._validade = function() {		
+  		// current question´s input	input
+    var input = this.questions[ this.current ].querySelector( 'input' )
+if (input.hasAttribute('data-validate')) {
+    switch (input.getAttribute('data-validate')) {
+ 				case 'none' :
+ 					// there's no validation in this field, moving on
+ 					break;
+ 				case 'email' :
+ 					if (!this._validateEmail(input.value)) {
+ 						this._showError( 'INVALIDEMAIL' );
+ 						return false;
+ 					} 
+ 					break;
+ 			}
+ 		} else {
+ 			if( input.value === '' ) {
+ 				this._showError( 'EMPTYSTR' );
+ 				return false;
+ 			  }
+  		}	
+      return true;
+  	}		  
+  		  
+ 	// email validation
+ 	stepsForm.prototype._validateEmail = function( email ) {
+ 		var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+ 		return regex.test(email);
+ 	}
+ 
 
-
-	// TODO (next version..)
+	// TODO (next version..)  
 	stepsForm.prototype._showError = function( err ) {
 		var message = '';
 		var URLopenModal = window.location.href.substr(-18);

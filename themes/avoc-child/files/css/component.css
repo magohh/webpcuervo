@@ -12,7 +12,7 @@
 .simform {
 	position: relative;
 	margin: 0 auto;
-	padding: 3em 0 1em;
+	padding: 2.3em 0 1.5em;
 	max-width: 860px;
 	width: 100%;
 	text-align: left;
@@ -102,7 +102,7 @@ ol.questions label{
     font-size: .6em!important;
     font-weight: bold;
     position: absolute;
-    top:-4em;
+    top:-2.9em;
     margin-left: .3em;
     text-transform:none; 
 
@@ -121,23 +121,22 @@ ol.questions label.placeholder:checked{
 /* Input field */
 .questions input {
 	display: block;
-	margin: 0;
-	padding-left:.3em;
-	/*width: calc(100% - 2em);*/
+	margin: 0.3em 0 0 0;
+	padding: 0.5em 1em 1.15em 0.7em;
+	width: calc(100% - 2em);
 	border: none;
 	background: transparent;
-	color: rgba(0,0,0,0.8);
-	font-size: .8em;
+	color: rgba(0,0,0,1);
+	font-size: 1em;
 	line-height: 1;
 	opacity: 0;
 	-webkit-transition: opacity 0.3s;
 	transition: opacity 0.3s;
-	font-weight: normal!important;
 }
 
 .questions .current input,
 .no-js .questions input {
-	opacity: .3;
+	opacity: 1;
 }
 
 .questions input:focus,
@@ -176,7 +175,7 @@ ol.questions label.placeholder:checked{
 
 .next-button::after {
 	position: absolute;
-	top: 29px;
+	top: 10px;
 	left: 0;
 	width: 100%;
 	height: 100%;
@@ -195,7 +194,7 @@ ol.questions label.placeholder:checked{
 @media(max-width: 600px){
 	.next-button::after {
 	position: absolute;
-	top: -1em;}
+	top: -.68em}
 }
 
 .next-button.show {
@@ -234,6 +233,11 @@ ol.questions label.placeholder:checked{
 	font-weight: 700;
 	font-size: 0.5em;
 	color:#ffffff;
+}
+@media(max-width: 600px){
+	.simform .number{
+		font-size: 1em;
+	}
 }
 
 .simform .number:after {
@@ -289,6 +293,7 @@ ol.questions label.placeholder:checked{
 	color: rgba(0,0,0,0.7);
 	font-style: italic;
 	font-size: 0.4em;
+
 }
 
 .final-message {
@@ -300,6 +305,7 @@ ol.questions label.placeholder:checked{
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	font-family: Montserrat;
+	line-height: 1.5;
 }
 
 .error-message.show,
@@ -359,7 +365,7 @@ input[type=text]::-ms-clear {
 
 @media screen and (max-width: 33.5625em) {
 	.simform {
-		font-size: 1.2em;
+		font-size: 1.5em;
 	}
 }
 
@@ -374,7 +380,7 @@ input[type=text]::-ms-clear {
 /*simform movil*/
 @media(max-width: 600px){
 	.simform{
-		padding: 5em 0 3em!important;
+		padding: 3.5em 0 2.5em!important;
 	}
 	ol.questions label{
 		font-size:1em!important; 

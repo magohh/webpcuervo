@@ -70,7 +70,8 @@ $theId = sr_getId();
             </form>-->
 
             <div id="openModal" class="modalDialog">
-                <div>   <a href="#close" title="Close" class="close">X</a>
+                <div>   <a href="#close" title="Close" class="close">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/files/images/close.png"></a>
 					<section>
 						<form id="theForm" class="simform" autocomplete="off">
 							<div class="simform-inner">
@@ -78,37 +79,37 @@ $theId = sr_getId();
 									<li>
                                         <?php if( 'es' == $lang ) : ?>
     										<span><label for="q1">Queremos conocerte mejor, ¿cómo te llamas?</label></span>
-    										<input id="q1" name="q1" placeholder="Anda, dinos tu nombre sin pena :)" type="text"/>
+    										<input id="q1" name="q1" type="text"/>
                                         <?php else : ?>
                                             <span><label for="q1">We want to meet you better, what's your name ?</label></span>
-                                            <input id="q1" name="q1" placeholder="Go on, tell us your name without shame :)" type="text"/>
+                                            <input id="q1" name="q1" />
                                         <?php endif; ?>  
 									</li>
 									<li>
                                         <?php if( 'es' == $lang ) : ?>
     										<span><label for="q2">Necesitamos tu email para estar en contacto</label></span>
-    										<input  type="email" id="q2" class="q2" name="q2" placeholder="Te juro que no mandaremos spam, es solo para contactarte"/>
+    										<input  type="email" id="q2" class=".q2" name="q2"  data-validate="email" />
                                         <?php else : ?>
                                             <span><label for="q2">We need your email to stay in touch</label></span>
-                                           <input type="email" id="q2" class="q2" data-validate="email" name="q2" placeholder="I swear we'll not send spam , it is only to contact you" />
+                                           <input type="email" id="q2" class="q2"  name="q2"  data-validate="email" />
                                         <?php endif; ?> 
 									</li>
 									<li>
                                         <?php if( 'es' == $lang ) : ?>
     										<span><label for="q3">Cuéntanos un poco sobre tu proyecto</label></span>
-    										<input id="q3" name="q3" placeholder="Necesitamos un poquito mas de información :P" type="text"/>
+    										<input id="q3" name="q3" type="text"/>
                                         <?php else : ?>
                                             <span><label for="q3">Tell us about your project</label></span>
-                                            <input id="q3" name="q3" placeholder="We need a little more information :P" type="text"/>
+                                            <input id="q3" name="q3" type="text"/>
                                         <?php endif; ?> 
 								</li>
 									<li>
                                         <?php if( 'es' == $lang ) : ?>
     										<span><label for="q4">¿Cuál es tu presupuesto?</label></span>
-    										<input id="q4" name="q4" placeholder="Puede ser un estimado. ¡Tratamos a todos nuestros clientes igual, no importa el presupuesto!" type="text"/>
+    										<input id="q4" name="q4" type="text"/>
                                         <?php else : ?>
                                             <span><label for="q4">What is your budget?</label></span>
-                                            <input id="q4" name="q4" placeholder="It may be an estimate. We treat all our customers equally, no matter the budget!" type="text"/>
+                                            <input id="q4" name="q4"  type="text"/>
                                         <?php endif; ?> 
 									</li>
 								</ol><!-- /questions -->
