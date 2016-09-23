@@ -82,7 +82,7 @@ $theId = sr_getId();
     										<input id="q1" name="q1" type="text"/>
                                         <?php else : ?>
                                             <span><label for="q1">We want to meet you better, what's your name ?</label></span>
-                                            <input id="q1" name="q1" />
+                                            <input id="q1" name="q1" type="text"/>
                                         <?php endif; ?>  
 									</li>
 									<li>
