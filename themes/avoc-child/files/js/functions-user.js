@@ -10,7 +10,7 @@ var $=jQuery.noConflict();
       //fontColor();
       initMap();
       
-      //$('form').parsley();
+
     });
 
    });
@@ -43,9 +43,6 @@ function minimalForms(){
       
       classie.addClass( messageEl, 'show' );
 
-      /*var messageEl2 = theForm.querySelector( '.final-message-2' );
-      messageEl2.innerHTML = 'Gracias\'ll be in touch.';
-      classie.addClass( messageEl2, 'show' );*/
     }
   } );
 
@@ -63,10 +60,10 @@ function minimalForms(){
 //}
   
 
-$(document).ready(function(){       
-   var scroll_start = 0;
-   var startchange = $('.nav');
-   var offset = startchange.offset();
+//$(document).ready(function(){       
+   //var scroll_start = 0;
+   //var startchange = $('.nav');
+   //var offset = startchange.offset();
 
 
 
@@ -88,7 +85,7 @@ $(document).ready(function(){
           //$('#dark-logo').removeClass('opacity--0');
        //}
    //});
-});
+//});
 
 function initMap() {
 var locations = [
