@@ -359,3 +359,40 @@ ul li, ol li{margin-top: 0px;}
 div.portfolio-masonry.masonry{margin-bottom: 30px!important;}
 
 header.header-open:not(.header-transparent) + #hero{margin-top: 0px!important;}
+
+
+/*MERCADOSHOPS*/
+a.sr-button{
+    background:#00aabb;
+    border-radius:50px;
+}
+a.sr-button:hover{background:#e74c3c;}
+
+.contact-form{
+    background:#00aabb;
+    padding:5em 40em;
+}
+.contact-form form{
+    max-width: 100%;
+}
+
+@media(max-width: 1600px){
+    .contact-form{
+    background:#00aabb;
+    padding:5em 30em;
+}
+
+}
+@media(max-width: 1100px){
+    .contact-form{
+    background:#00aabb;
+    padding:5em 20em;
+}
+
+}
+@media(max-width: 800px){
+    .contact-form{
+    padding:5em 5em;
+}
+
+}

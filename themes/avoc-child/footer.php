@@ -13,10 +13,73 @@ $theId = sr_getId();
     <!-- FOOTER --> 
  	<footer<?php if(get_option($sr_prefix.'_footercolor') == 'dark') { ?> class="footer-dark text-light"<?php } ?>>
 
+    <?php if ( is_page('mercadoshops' )) { ?>
+        <section class="contact-form">
+            <form id="theForm" class="simform" autocomplete="off">
+                <div class="simform-inner">
+                    <ol class="questions">
+                        <li>
+                            <?php if( 'es' == $lang ) : ?>
+                                <span><label for="q1">Queremos conocerte mejor, ¿cómo te llamas?</label></span>
+                                <input id="q1" name="q1" type="text"/>
+                            <?php else : ?>
+                                <span><label for="q1">We want to meet you better, what's your name ?</label></span>
+                                <input id="q1" name="q1" type="text"/>
+                            <?php endif; ?>  
+                        </li>
+                        <li>
+                            <?php if( 'es' == $lang ) : ?>
+                                <span><label for="q2">Necesitamos tu email para estar en contacto</label></span>
+                                <input  type="email" id="q2" class=".q2" name="q2"  data-validate="email" />
+                            <?php else : ?>
+                                <span><label for="q2">We need your email to stay in touch</label></span>
+                               <input type="email" id="q2" class="q2"  name="q2"  data-validate="email" />
+                            <?php endif; ?> 
+                        </li>
+                        <li>
+                            <?php if( 'es' == $lang ) : ?>
+                                <span><label for="q3">Cuéntanos un poco sobre tu proyecto</label></span>
+                                <input id="q3" name="q3" type="text"/>
+                            <?php else : ?>
+                                <span><label for="q3">Tell us about your project</label></span>
+                                <input id="q3" name="q3" type="text"/>
+                            <?php endif; ?> 
+                    </li>
+                        <li>
+                            <?php if( 'es' == $lang ) : ?>
+                                <span><label for="q4">¿Cuál es tu presupuesto?</label></span>
+                                <input id="q4" name="q4" type="text"/>
+                            <?php else : ?>
+                                <span><label for="q4">What is your budget?</label></span>
+                                <input id="q4" name="q4"  type="text"/>
+                            <?php endif; ?> 
+                        </li>
+                    </ol><!-- /questions -->
+                    <button class="submit" type="submit">Send answers</button>
+                    <div class="controls">
+                        <button class="next-button"></button>
+                        <div class="progress"></div>
+                        <span class="number">
+                            <span class="number-current"></span>
+                            <span class="number-total"></span>
+                        </span>
+                        <span class="error-message"></span>
+                    </div><!-- / controls -->
+                </div><!-- /simform-inner -->
+
+                <span class="final-message"></span>
+
+            </form><!-- /simform -->
+        </section>
+    <?php } else { ?>
         <div class="map-wrap iframe-cont">
             <div class="overlay" onClick="style.pointerEvents='none'"></div><!-- wrap map iframe to turn off mouse scroll and turn it back on on click -->
            <div id="map"></div>
         </div>
+    <?php } ?>
+
+
+
         
        <div class="footer-inner <?php if(get_option($sr_prefix.'_footerlayout') !== 'column') { ?>align-center<?php } ?> wrapper">
             
