@@ -19,8 +19,7 @@
 /*HEADER*/
 .description{
 	width: 90%;
-	top:25%;
-	 position: absolute;
+	position: absolute;
 	top: 50%;
 	left: 50%;
 	-webkit-transform: translate(-50%, -50%);
@@ -37,11 +36,10 @@ header:after{background-color: #00aabb;}
 
 h3{text-transform: lowercase!important;}
 
-header:after, header:before{height:120px!important;}
+
 header #logo{height:60px!important;}
 header:after{background-color: #00aabb;}
 header:before{background-color: #00aabb;}
-
 
 ul#primary  li#menu-item-1309{
      background: #e74c3c;
@@ -64,7 +62,7 @@ ul#primary  li#menu-item-1182 :hover{
     color: transparent;
     border-radius: 0px;
 }
-ul#primary > li#menu-item-1182 a{ padding-right: 2px 14px;}
+ul#primary > li#menu-item-1182 a{ padding: 2px 14px!important;}
 
 
 ul#primary li a{
@@ -78,16 +76,12 @@ ul#primary li a{
 .btn-menu{
 	border: 2px rgba(0,0,0,0.0) solid;
 	border-radius: 50px;
-	padding: 0 .4em!important;
 }
 .btn-menu:hover{
-	color: #e74c3c;
 	border-radius: 50px;
-	padding: 0 .4em!important;
 }
 
 @media(max-width: 600px){.btn-menu{margin-bottom:.8em!important}}
-
 @media(max-width: 1024px){.btn-menu{margin-bottom:.8em!important}}
 
 
@@ -95,21 +89,25 @@ ul#primary li a{
 	nav#main-nav{padding-right: 8px!important;}
     }
 
-@media only screen and (max-width: 1024px){
-    .menu-light nav#main-nav > ul > li > a{color: black!important;}
-}
 
 nav#main-nav ul li > a{line-height: 30px!important;}
 nav#main-nav ul li > a.font-color{color:#e74c3c;}
 
+section#hero{margin-bottom: 15px;}
+@media(max-width: 600px){section#hero{margin-bottom: 0px}}
+
+
+/*spacer- projects page*/
+#section-projects{margin-top: 177px;}
+#section-about{margin-top: 100px;}
+
+@media(max-width: 10124px){#section-about{margin-top: 140px;}}
+
+
 /*current page style */
-nav#main-nav > ul > li:hover > a, nav#main-nav > ul > li.current-menu-item > a{
-	color: #00aabb!important;
-}
-ul#primary:active{color:#00aabb;}
 
 ul#primary li.current-menu-item a{background-color: #ffffff;}
-
+ul#primary li.current-menu-item a:hover{color: #ffffff!important;}
 
 ul#primary li a{
     border: 2px rgba(0,0,0,0.0) solid;
@@ -118,7 +116,7 @@ ul#primary li a{
 }
 ul#primary li a:hover{
     background-color: #e74c3c;
-    color: #e74c3c;
+    color: #ffffff;
     border-radius: 50px;
     padding: 0 .4em!important;
 
@@ -129,13 +127,11 @@ ul#primary li a:hover{
 	background-color: transparent!important;
 	}
 }
-header.header-open:not(.header-transparent) .menu-light nav#main-nav > ul > li > a{color:#ffffff;}
 
-@media only screen and (max-width: 1024px){
-    .menu-light nav#main-nav > ul > li > a{
-        color:#ffffff!important;
-    }
+nav#main-nav ul li > a, .open-nav .text{
+    color:white!important;
 }
+
 /*menu movil*/
 @media only screen and (max-width: 1024px){
 	header:after{
@@ -166,6 +162,8 @@ nav#main-nav ul li.menu-item-language > a{
     line-height: 2.4em!important;
 }
 li.menu-item.menu-item-language ul.sub-menu.submenu-languages{z-index: -10!important}
+.menu-item.menu-item-language.menu-item-language-current.menu-item-has-children{z-index:-11;}
+
 @media only screen and (max-width: 1024px){
 	nav#main-nav ul li > ul.sub-menu > li a{
 		color:#ffffff!important;
@@ -316,6 +314,7 @@ footer #backtotop:hover{color:#e74c3c!important;}
 
 @media(max-width: 600px){
 	.modalDialog > div { width:100%;}
+
 }
 
 @media(min-width: 1200px){
@@ -350,9 +349,6 @@ ul li, ol li{margin-top: 0px;}
     margin-top:6px;
 }
 
-/*spacer- projects page*/
-#section-projects{margin-top: 110px;}
-#section-about{margin-top: 30px;}
 
 #map{
 	height:300px;
@@ -360,6 +356,6 @@ ul li, ol li{margin-top: 0px;}
 }
 
 /*portfolio margin*/
-div.portfolio-masonry.masonry{margin-bottom: 7px!important;}
+div.portfolio-masonry.masonry{margin-bottom: 30px!important;}
 
-
+header.header-open:not(.header-transparent) + #hero{margin-top: 0px!important;}

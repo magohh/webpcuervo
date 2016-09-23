@@ -7,14 +7,15 @@ var $=jQuery.noConflict();
     $(window).ready(function(){
 
       minimalForms();
-      //fontColor();
       initMap();
+      
       
 
     });
 
    });
 })(jQuery);
+
 
 function minimalForms(){
 
@@ -38,7 +39,7 @@ function minimalForms(){
       if ( URLopenModal == '?lang=en#openModal'){
         messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
       } else {
-        messageEl.innerHTML = 'Gracias!, Nos pondremos en contacto';
+        messageEl.innerHTML = '¡Gracias! Nos pondremos en contacto.';
       }
       
       classie.addClass( messageEl, 'show' );
@@ -52,40 +53,7 @@ function minimalForms(){
 
 
 }
-//function fontColor(){
- // if( $('li').hasClass('menu-item') ){
-   // $("li.menu-item a").addClass('font-color');
-  //}
-  
-//}
-  
 
-//$(document).ready(function(){       
-   //var scroll_start = 0;
-   //var startchange = $('.nav');
-   //var offset = startchange.offset();
-
-
-
- 
-   //$(document).scroll(function() { 
-      //scroll_start = $(this).scrollTop();
-      //if(scroll_start > offset.top) {
-          //$('.nav').css('background-color', 'rgb(255,255,255)');
-          //$('.nav').css('height', '99px');
-          //$('a.font-color').css('color', 'black');
-          //$('#light-logo').addClass('opacity--1');
-          //$('#dark-logo').addClass('opacity--0');
-
-       //} else {
-          //$('.nav').css('background-color', '#00aabb');
-          //$('.nav').css('height', '120px');
-          //$('a.font-color').css('color', 'white');
-          //$('#light-logo').removeClass('opacity--1');
-          //$('#dark-logo').removeClass('opacity--0');
-       //}
-   //});
-//});
 
 function initMap() {
 var locations = [
