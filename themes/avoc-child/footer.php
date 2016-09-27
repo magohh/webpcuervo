@@ -118,7 +118,6 @@ $theId = sr_getId();
             </div>
             <?php } ?>
             
-
             <?php if (!get_option($sr_prefix.'_disablebacktotop')) { ?>
                 <?php if( 'es' == $lang ) : ?>
                     <a id="backtotop" href="#"><?php _e( 'Regresar', 'sr_avoc_theme' ) ?></a>
@@ -136,7 +135,8 @@ $theId = sr_getId();
                 <div>   <a href="#close" title="Close" class="close">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/files/images/close.png"></a>
 					<section>
-						<form id="theForm" class="simform" autocomplete="off">
+
+						<form id="theForm" class="simform" autocomplete="off" method="get" action="sendmail.php">
 							<div class="simform-inner">
 								<ol class="questions">
 									<li>
@@ -151,7 +151,7 @@ $theId = sr_getId();
 									<li>
                                         <?php if( 'es' == $lang ) : ?>
     										<span><label for="q2">Necesitamos tu email para estar en contacto</label></span>
-    										<input  type="email" id="q2" class=".q2" name="q2"  data-validate="email" />
+    										<input  type="email" id="q2" class="q2" name="q2"  data-validate="email" />
                                         <?php else : ?>
                                             <span><label for="q2">We need your email to stay in touch</label></span>
                                            <input type="email" id="q2" class="q2"  name="q2"  data-validate="email" />
@@ -173,10 +173,11 @@ $theId = sr_getId();
                                         <?php else : ?>
                                             <span><label for="q4">What is your budget?</label></span>
                                             <input id="q4" name="q4"  type="text"/>
+
                                         <?php endif; ?> 
 									</li>
 								</ol><!-- /questions -->
-								<button class="submit" type="submit">Send answers</button>
+								<button class="submit" type="submit" onClick="submit();">send</button>
 								<div class="controls">
 									<button class="next-button"></button>
 									<div class="progress"></div>
@@ -199,7 +200,7 @@ $theId = sr_getId();
     <!-- FOOTER --> 
 	
     <?php } ?>
-    
+
 </div> <!-- END #page-content -->
 <!-- PAGE CONTENT -->
 <?php wp_footer(); ?>
