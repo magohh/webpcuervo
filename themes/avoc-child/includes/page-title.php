@@ -217,13 +217,12 @@ if (isset($pagesub) && $titleArrangement == 'main') { $titleWrite .= '<'.$subSiz
 
 					<?php if( 'es' == $lang ) : ?>
 	                    <div class="[ description ]">
-							<h2>CÓDIGO ARTESANAL DISEÑO FUNCIONAL</h2>
+							<h2>CÓDIGO ARTESANAL</h2><h2> DISEÑO FUNCIONAL</h2>
 							<h3>somos una agencia digital que ofrece soluciones centradas en el usuario a través de una mezcla perfecta entre el código y los píxeles. </h3>
 	                    </div>
 					<?php else : ?>
 						<div class="[ description ]">
-							<h2>HANDCRAFTED CODE
-							FUNCTIONAL DESIGN</h2>
+							<h2>HANDCRAFTED CODE</h2><h2>FUNCTIONAL DESIGN</h2>
 							<h3>We are a digital agency that offers user-centered solutions through a perfect mix between code and pixels.</h3>
 	                    </div>
                     <?php endif; ?>  

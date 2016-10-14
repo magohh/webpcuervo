@@ -8,8 +8,8 @@ var $=jQuery.noConflict();
 
       minimalForms();
       initMap();
-      
-      
+      $('#theForm').parsley();
+
 
     });
 
@@ -26,23 +26,46 @@ function minimalForms(){
       // hide form
       classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
 
+      
+      //form.submit()
       /*
-      form.submit()
       or
       AJAX request (maybe show loading indicator while we don't have an answer..)
       */
-
-      // let's just simulate something...
       var messageEl = theForm.querySelector( '.final-message' );
       var URLopenModal = window.location.href.substr(-18);
-      console.log(URLopenModal)
-      if ( URLopenModal == '?lang=en#openModal'){
-        messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
-      } else {
-        messageEl.innerHTML = '¡Gracias! Nos pondremos en contacto.';
-      }
+      console.log(URLopenModal);
+      $.post($("#ruta").val()+'sendmail.php', {q1: $("#q1").val(), q2: $("#q2").val(), q3: $("#q3").val(), q4: $("#q4").val() }, 
+          function(data) {
+            
+            
+            if(data == "OK") {
+              if ( URLopenModal == '?lang=en#openModal'){
+                messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
+              } else {
+                messageEl.innerHTML = '¡Gracias! Nos pondremos en contacto.';
+              }
+            } 
+            else {
+              messageEl.innerHTML = 'Ocurrio un error, por favor intentalo de nuevo.';
+            }
+        })
+        .always(function(data){ 
+           console.log('Always -> ['+data+']');
+           classie.addClass( messageEl, 'show' );
+           
+        })
+        .fail(function(xhr, status, error) {
+            console.log('FAIL');
+            console.log(xhr);
+            console.log(status);
+            console.log(error);
+        });
+
+      // let's just simulate something...
       
-      classie.addClass( messageEl, 'show' );
+      
+      
 
     }
   } );

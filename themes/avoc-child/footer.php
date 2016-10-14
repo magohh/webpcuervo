@@ -3,6 +3,10 @@ $lang = isset( $_GET['lang'] ) ? $_GET['lang'] : 'es';
 global $sr_prefix;
 $theId = sr_getId();
 
+if ( ! defined( 'SITEURL' ) ) {
+    define( 'SITEURL', site_url('/') );
+}
+
 ?>
 	<?php if ( !is_404() ) { ?>
     
@@ -15,16 +19,17 @@ $theId = sr_getId();
 
     <?php if ( is_page('mercadoshops' )) { ?>
         <section class="contact-form">
-            <form id="theForm" class="simform" autocomplete="off">
+            <form id="theForm" class="simform" autocomplete="off" data-parsley-validate>
+
                 <div class="simform-inner">
                     <ol class="questions">
                         <li>
                             <?php if( 'es' == $lang ) : ?>
                                 <span><label for="q1">Queremos conocerte mejor, ¿cómo te llamas?</label></span>
-                                <input id="q1" name="q1" type="text"/>
+                                <input id="q1" name="q1" type="text" data-parsley-error-message="This field is required" required/>
                             <?php else : ?>
                                 <span><label for="q1">We want to meet you better, what's your name ?</label></span>
-                                <input id="q1" name="q1" type="text"/>
+                                <input id="q1" name="q1" type="text" data-parsley-error-message="This field is required" required/>
                             <?php endif; ?>  
                         </li>
                         <li>
@@ -91,8 +96,9 @@ $theId = sr_getId();
             <div class="column-section clearfix">
                 <div class="column-two">
                     <h6 class="margin-horizontal-10">
+                    <input type="text" id="ruta" name="ruta" value="<?php echo SITEURL; ?>">
 
-                    MÉXICO
+                    MÉXICO 
 
                     01152 4336 7589
                     Agrarismo 52, Col. Escandón, Miguel Hidalgo, D.F., México. 11800</h6>
@@ -135,17 +141,17 @@ $theId = sr_getId();
                 <div>   <a href="#close" title="Close" class="close">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/files/images/close.png"></a>
 					<section>
-
-						<form id="theForm" class="simform" autocomplete="off" method="get" action="sendmail.php">
+                        
+						<form id="theForm" class="simform" autocomplete="off" data-parsley-validate >
 							<div class="simform-inner">
 								<ol class="questions">
 									<li>
                                         <?php if( 'es' == $lang ) : ?>
     										<span><label for="q1">Queremos conocerte mejor, ¿cómo te llamas?</label></span>
-    										<input id="q1" name="q1" type="text"/>
+    										<input id="q1" name="q1" type="text" data-parsley-error-message="This field is required" required/>
                                         <?php else : ?>
                                             <span><label for="q1">We want to meet you better, what's your name ?</label></span>
-                                            <input id="q1" name="q1" type="text"/>
+                                            <input id="q1" name="q1" type="text" data-parsley-error-message="This field is required" required/>
                                         <?php endif; ?>  
 									</li>
 									<li>
@@ -177,7 +183,7 @@ $theId = sr_getId();
                                         <?php endif; ?> 
 									</li>
 								</ol><!-- /questions -->
-								<button class="submit" type="submit" onClick="submit();">send</button>
+								<button class="submit" type="submit">send</button>
 								<div class="controls">
 									<button class="next-button"></button>
 									<div class="progress"></div>
@@ -204,6 +210,8 @@ $theId = sr_getId();
 </div> <!-- END #page-content -->
 <!-- PAGE CONTENT -->
 <?php wp_footer(); ?>
-
+<script type="text/javascript">
+  $('#theForm').parsley();
+</script>
 </body>
 </html>

@@ -197,8 +197,6 @@
 		this.options.onSubmit( this.el );
 	}
 
-	// TODO (next version..)
-	// the validation function
 
 
 // TODO (next version..)

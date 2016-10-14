@@ -1,4 +1,5 @@
 /* 
+/* 
 
 	Theme Name: Avoc Child
 	Theme URI: http://www.spab-rice.com 
@@ -138,6 +139,16 @@ nav#main-nav ul li > a, .open-nav .text{
 		background-color: #00aabb!important;
 	}
 }
+
+a.open-nav span.text{color:#ffffff!important;}
+
+header.hero-invisible #menu .open-nav .text { color: #ffffff !important; }
+
+header.hero-invisible #menu .open-nav .hamburger, header.hero-invisible #menu .open-nav .hamburger:before, header.hero-invisible #menu .open-nav .hamburger:after{background-color:#ffffff!important;}
+.hamburger:after{background-color:#ffffff!important;}
+.hamburger{background-color:#ffffff!important;}
+.hamburger:before{background-color:#ffffff!important;}
+
 /*--Button language--*/
 ul#primary li.menu-item-language:hover{background-color: transparent;}
 li.menu-item-language a{
@@ -215,7 +226,8 @@ a.open-filter{
 
     a.open-filter{top:10px!important;}
 }
-a.open-share{display:none;}
+/*también oculta el input que envia el formulario*/
+a.open-share,input#ruta{display:none;}
 
 
 p{margin:0px 0px 40px;}
@@ -249,8 +261,14 @@ div.hover-caption h5{
 
 .footer-inner{padding:60px 0px!important;}
 
+.socialmedia-widget li{ 
+    margin-top:3rem;
+    margin-left:2rem; 
+    margin-right: 2rem!important;
+}
+
 .socialmedia-widget li a{
-	font-size: 35px;
+	font-size: 45px;
 	color:#ea4452;
 }
 .socialmedia-widget li a:hover{color:#00aabb!important;}
@@ -351,7 +369,7 @@ ul li, ol li{margin-top: 0px;}
 
 
 #map{
-	height:300px;
+	height:500px;
 	width: 100%;
 }
 
